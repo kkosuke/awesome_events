@@ -5,4 +5,5 @@ class Ticket < ApplicationRecord
 
   # 30文字以内、空白を許可
   validates :comment, length: {maximum: 30}, allow_blank: true
+  validates :user, uniqueness: true
 end
