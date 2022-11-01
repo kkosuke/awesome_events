@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
-  has_many :tickets
+  # イベントが削除された段階で関連するTicketを削除するようにする
+  # has_manyメソッドにdependent::destroyオプションを指定すると、親となるオブジェクトのレコードが削除された時に子のレコードも同時に削除されます。
+  has_many :tickets, dependent: :destroy
   belongs_to :owner, class_name: "User"
   validates :name, length: {maximum: 50 }, presence: true
   validates :place, length: {maximum: 100 }, presence: true
