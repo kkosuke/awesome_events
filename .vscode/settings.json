@@ -1,0 +1,4 @@
+{
+  "ruby.rubocop.onSave": true,
+  "ruby.rubocop.executePath": "/Users/kosuke/.anyenv/envs/rbenv/shims/"
+}
